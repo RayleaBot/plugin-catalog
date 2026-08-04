@@ -1,0 +1,55 @@
+{
+  "catalog_version": "1",
+  "generated_at": "2026-08-04T00:00:00Z",
+  "entries": [
+    {
+      "id": "raylea.echo",
+      "name": "Echo",
+      "summary": "回显收到的聊天消息。",
+      "description": "用于验证命令分发、事件处理和消息回复链路的官方插件。",
+      "publisher": { "id": "rayleabot", "name": "RayleaBot", "verified": true },
+      "repository_url": "https://github.com/RayleaBot/plugin-echo",
+      "license": "MIT",
+      "keywords": ["echo", "message"],
+      "recommended": true,
+      "releases": []
+    },
+    {
+      "id": "raylea.fortune",
+      "name": "Fortune",
+      "summary": "提供每日运势与 Vue 管理页。",
+      "description": "生成稳定的每日运势结果，并通过隔离的插件管理页维护展示配置。",
+      "publisher": { "id": "rayleabot", "name": "RayleaBot", "verified": true },
+      "repository_url": "https://github.com/RayleaBot/plugin-fortune",
+      "license": "MIT",
+      "keywords": ["fortune", "vue"],
+      "recommended": true,
+      "releases": []
+    },
+    {
+      "id": "raylea.game-guide",
+      "name": "Game Guide",
+      "summary": "查询游戏角色攻略并渲染卡片。",
+      "description": "通过命令规则检索角色资料，并使用框架托管的渲染模板输出攻略卡片。",
+      "publisher": { "id": "rayleabot", "name": "RayleaBot", "verified": true },
+      "repository_url": "https://github.com/RayleaBot/plugin-game-guide",
+      "license": "MIT",
+      "keywords": ["guide", "render"],
+      "recommended": true,
+      "releases": []
+    },
+    {
+      "id": "raylea.subscription-hub",
+      "name": "Subscription Hub",
+      "summary": "订阅第三方动态并推送更新。",
+      "description": "管理第三方账号订阅、定时检查和图文更新渲染，并提供独立 Vue 管理页。",
+      "publisher": { "id": "rayleabot", "name": "RayleaBot", "verified": true },
+      "repository_url": "https://github.com/RayleaBot/plugin-subscription-hub",
+      "license": "MIT",
+      "keywords": ["subscription", "bilibili", "scheduler"],
+      "recommended": true,
+      "releases": []
+    }
+  ]
+}
+
