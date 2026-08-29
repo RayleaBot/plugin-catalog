@@ -1,12 +1,12 @@
 {
   "signature_version": 1,
   "algorithm": "ed25519",
-  "catalog_sha256": "f1b1574034006bb1aec3c0a284082b511f8ea566d944ac8fc7c5e94bbaa56b89",
+  "catalog_sha256": "9c612b618aeeb8f8a0aca38ff6c263b7a8115fbca8e1d61abba69e2006dff804",
   "key_id": "release-2026-primary",
   "signatures": [
     {
       "key_id": "release-2026-primary",
-      "signature": "cdprFCqy8T2pMWHCc69h4WE7zJoqXYWK6HfmsOqsrd6boYaST9XewP-whqNd39LcLlODgTo2i7mNZ1ADMJ7yBQ=="
+      "signature": "-DePnw3yVv5HZGQzCVIx7mXIbKSnOajT8h67Ut1_0hAZn09Qiu8jdHUXOVUy-rQHQUnwk1hT-m_Ssfk40muiCA=="
     }
   ]
 }
