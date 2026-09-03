@@ -16,7 +16,29 @@
         "message"
       ],
       "recommended": true,
-      "category": "工具"
+      "category": "工具",
+      "current_release": {
+        "version": "0.3.0",
+        "published_at": "2026-09-03T12:22:38Z",
+        "min_core_version": "0.4.0",
+        "assets": [
+          {
+            "platform": "windows-x64",
+            "url": "https://github.com/RayleaBot/plugin-echo/releases/download/v0.3.0/raylea.echo-0.3.0-windows-x64.zip",
+            "archive_sha256": "06248f168c9cc1b2fbf442242679dcbb44fde25a16271b12d8c2752b6250a1d7"
+          },
+          {
+            "platform": "linux-x64",
+            "url": "https://github.com/RayleaBot/plugin-echo/releases/download/v0.3.0/raylea.echo-0.3.0-linux-x64.zip",
+            "archive_sha256": "0fe250c5eba234084af7698e0c4c27653431d56c1f29a71c8bb0adaa0a8e2126"
+          },
+          {
+            "platform": "macos-arm64",
+            "url": "https://github.com/RayleaBot/plugin-echo/releases/download/v0.3.0/raylea.echo-0.3.0-macos-arm64.zip",
+            "archive_sha256": "655be9b446bf3f7168fdb52146ec36b19a206f21436fcf7dd35165471613b8cf"
+          }
+        ]
+      }
     },
     {
       "id": "raylea.fortune",
@@ -34,7 +56,29 @@
         "vue"
       ],
       "recommended": true,
-      "category": "娱乐"
+      "category": "娱乐",
+      "current_release": {
+        "version": "0.3.0",
+        "published_at": "2026-09-03T12:23:23Z",
+        "min_core_version": "0.4.0",
+        "assets": [
+          {
+            "platform": "windows-x64",
+            "url": "https://github.com/RayleaBot/plugin-fortune/releases/download/v0.3.0/raylea.fortune-0.3.0-windows-x64.zip",
+            "archive_sha256": "e69e754454fe1540fb079592ab8a1d6995c387bb6790940993439b7c43d658b3"
+          },
+          {
+            "platform": "linux-x64",
+            "url": "https://github.com/RayleaBot/plugin-fortune/releases/download/v0.3.0/raylea.fortune-0.3.0-linux-x64.zip",
+            "archive_sha256": "7aaf8002ba6045250d197c3fb7e9b180076b3ad02d7bd4c68153ea2f54bd4da4"
+          },
+          {
+            "platform": "macos-arm64",
+            "url": "https://github.com/RayleaBot/plugin-fortune/releases/download/v0.3.0/raylea.fortune-0.3.0-macos-arm64.zip",
+            "archive_sha256": "e426627159fba4b0cc7173ae176d6768cc03e94009b98b692321c67a95297d84"
+          }
+        ]
+      }
     },
     {
       "id": "raylea.game-guide",
@@ -52,7 +96,29 @@
         "honkai-star-rail"
       ],
       "recommended": true,
-      "category": "游戏"
+      "category": "游戏",
+      "current_release": {
+        "version": "0.3.0",
+        "published_at": "2026-09-03T12:22:37Z",
+        "min_core_version": "0.4.0",
+        "assets": [
+          {
+            "platform": "windows-x64",
+            "url": "https://github.com/RayleaBot/plugin-game-guide/releases/download/v0.3.0/raylea.game-guide-0.3.0-windows-x64.zip",
+            "archive_sha256": "7c114bdb876fbd58597dc029804875a1bc4a8a1a9531349f524c88eccefbfbf6"
+          },
+          {
+            "platform": "linux-x64",
+            "url": "https://github.com/RayleaBot/plugin-game-guide/releases/download/v0.3.0/raylea.game-guide-0.3.0-linux-x64.zip",
+            "archive_sha256": "78273945e3364e9cdad57dce8d913fe42c2ca9c35d806bd0d7e668121556fa75"
+          },
+          {
+            "platform": "macos-arm64",
+            "url": "https://github.com/RayleaBot/plugin-game-guide/releases/download/v0.3.0/raylea.game-guide-0.3.0-macos-arm64.zip",
+            "archive_sha256": "c481ab06e451f851256f9b5457b75937f9cd51421bdc2db727314b40f9fe957b"
+          }
+        ]
+      }
     },
     {
       "id": "raylea.subscription-hub",
@@ -72,7 +138,29 @@
         "resolver"
       ],
       "recommended": true,
-      "category": "工具"
+      "category": "工具",
+      "current_release": {
+        "version": "0.4.0",
+        "published_at": "2026-09-03T12:23:35Z",
+        "min_core_version": "0.4.0",
+        "assets": [
+          {
+            "platform": "windows-x64",
+            "url": "https://github.com/RayleaBot/plugin-subscription-hub/releases/download/v0.4.0/raylea.subscription-hub-0.4.0-windows-x64.zip",
+            "archive_sha256": "62638cc50e4ca58e440f4330ecd4b1ff5ae547119f39e4af262fb79c949580b9"
+          },
+          {
+            "platform": "linux-x64",
+            "url": "https://github.com/RayleaBot/plugin-subscription-hub/releases/download/v0.4.0/raylea.subscription-hub-0.4.0-linux-x64.zip",
+            "archive_sha256": "cccc094564df9ddd9f5a74ce9c5a116acd3f80c42c98d2a4ca1e4d06c2e80e2d"
+          },
+          {
+            "platform": "macos-arm64",
+            "url": "https://github.com/RayleaBot/plugin-subscription-hub/releases/download/v0.4.0/raylea.subscription-hub-0.4.0-macos-arm64.zip",
+            "archive_sha256": "44b0a0753e16cdc8552f59f055e239293c01226c9992357920fe474f4ec03197"
+          }
+        ]
+      }
     },
     {
       "id": "raylea.delta-force",
@@ -91,7 +179,29 @@
         "render"
       ],
       "recommended": true,
-      "category": "游戏"
+      "category": "游戏",
+      "current_release": {
+        "version": "0.1.0",
+        "published_at": "2026-09-03T12:22:43Z",
+        "min_core_version": "0.4.0",
+        "assets": [
+          {
+            "platform": "windows-x64",
+            "url": "https://github.com/RayleaBot/plugin-delta-force/releases/download/v0.1.0/raylea.delta-force-0.1.0-windows-x64.zip",
+            "archive_sha256": "498fc2c386601b766cc19d6adb4078a7f365015dd0ce2928032636d1151e5035"
+          },
+          {
+            "platform": "linux-x64",
+            "url": "https://github.com/RayleaBot/plugin-delta-force/releases/download/v0.1.0/raylea.delta-force-0.1.0-linux-x64.zip",
+            "archive_sha256": "e07b199addbf492d9861b4947151da70bab749c0645bebdf0da14df2a05d8dd3"
+          },
+          {
+            "platform": "macos-arm64",
+            "url": "https://github.com/RayleaBot/plugin-delta-force/releases/download/v0.1.0/raylea.delta-force-0.1.0-macos-arm64.zip",
+            "archive_sha256": "d49b5b1cd1c175cd8fe65eb57c62b4d4d19a459031a4a433aaa7a1eb8579d635"
+          }
+        ]
+      }
     },
     {
       "id": "raylea.oil-price",
@@ -109,7 +219,29 @@
         "openstreetmap"
       ],
       "recommended": true,
-      "category": "生活"
+      "category": "生活",
+      "current_release": {
+        "version": "0.3.0",
+        "published_at": "2026-09-03T12:22:55Z",
+        "min_core_version": "0.4.0",
+        "assets": [
+          {
+            "platform": "windows-x64",
+            "url": "https://github.com/RayleaBot/plugin-oil-price/releases/download/v0.3.0/raylea.oil-price-0.3.0-windows-x64.zip",
+            "archive_sha256": "43dbccac1d1913243b0b844287c980a1b15bbcd8b5c18d986aed0459af7693e6"
+          },
+          {
+            "platform": "linux-x64",
+            "url": "https://github.com/RayleaBot/plugin-oil-price/releases/download/v0.3.0/raylea.oil-price-0.3.0-linux-x64.zip",
+            "archive_sha256": "d94dcdb76d731a41e17d6d9e3633868d2bcabc65e61dede853b914d7981f8acf"
+          },
+          {
+            "platform": "macos-arm64",
+            "url": "https://github.com/RayleaBot/plugin-oil-price/releases/download/v0.3.0/raylea.oil-price-0.3.0-macos-arm64.zip",
+            "archive_sha256": "07b9366cf8f53723a73745f848c8cd315311f141ee257ae3455325ab59480137"
+          }
+        ]
+      }
     }
   ]
 }
