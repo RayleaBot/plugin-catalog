@@ -1,16 +1,33 @@
 # RayleaBot Plugin Catalog
 
-本仓库维护 RayleaBot 插件商店的 catalog v2 静态目录。`catalog.json` 是待签名的目录正文；发布工作流使用 Ed25519 对文件的原始字节签名，并生成 `catalog.sig.json`。RayleaBot Server 只接受通过内置公钥注册表验证的目录，不从插件 manifest 推导官方身份、发布者身份或下载摘要。
+本仓库发布 RayleaBot 默认插件源的静态 `catalog.json`。目录只描述每个插件当前可安装版本，不保存历史版本、签名文件或逐文件清单。
 
-目录中的每个版本必须列出 Windows x64、Linux x64 和 macOS arm64 的 GitHub Release ZIP、归档大小与归档 SHA-256，并在 release 层记录三平台共用的 `info.json` SHA-256。插件发布仓库完成三平台 artifact v2 Release 后，再在本仓库增加对应 release 条目。
+## 维护方式
 
-v0.4 切换期间，旧 artifact v1 发布保留为历史记录并标记为 `yanked: true`，商店不会继续提供这些不兼容版本。新版 artifact v2 发布完成后，新增未撤回的 release 条目，不覆盖历史摘要。
+- `sources.json` 维护插件名称、仓库、分类等稳定信息。
+- `scripts/sync_catalog.py` 读取各插件最新的 GitHub Release，识别 Windows x64、Linux x64 与 macOS arm64 的 artifact v2 ZIP，计算归档 SHA-256，并生成 `catalog.json`。
+- 发布工作流每 6 小时同步一次，也可手动触发。没有兼容 artifact v2 Release 的插件仍会出现在商店中，但不提供安装按钮。
 
-签名工作流需要仓库 secret `PLUGIN_CATALOG_SIGNING_KEY_PEM` 和 variable `PLUGIN_CATALOG_SIGNING_KEY_ID`。密钥轮换期间还可配置 `PLUGIN_CATALOG_SECONDARY_KEY_PEM` 与 `PLUGIN_CATALOG_SECONDARY_KEY_ID`。签名文件由工作流提交，私钥不得进入仓库、日志或插件包。
+新增插件时，只需在 `sources.json` 增加一项。插件发布符合下列命名的 ZIP 后，目录会自动收录可用平台：
 
-当前目录预先列出以下官方发布者条目；在 release 数组为空时，商店会显示“尚未发布”，不会提供安装操作：
+```text
+<plugin-id>-<version>-<platform>.zip
+```
+
+每个 ZIP 必须只有一个以插件 ID 命名的顶层目录；该目录包含与 Release 版本一致的 `info.json`，以及只含 `artifact_version`、`target_platform`、`entry` 三个字段的 `artifact.json`。
+
+本地检查当前目录：
+
+```bash
+python -m unittest discover -s tests
+python scripts/sync_catalog.py --validate-only
+```
+
+当前官方插件：
 
 - `raylea.echo`
 - `raylea.fortune`
 - `raylea.game-guide`
 - `raylea.subscription-hub`
+- `raylea.delta-force`
+- `raylea.oil-price`

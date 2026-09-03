@@ -1,71 +1,68 @@
 {
-  "catalog_version": "2",
-  "entries": [
+  "publisher": {
+    "id": "rayleabot",
+    "name": "RayleaBot"
+  },
+  "plugins": [
     {
       "id": "raylea.echo",
       "name": "Echo",
       "summary": "回显收到的聊天消息。",
-      "publisher": {"id": "rayleabot", "name": "RayleaBot"},
-      "repository_url": "https://github.com/RayleaBot/plugin-echo",
+      "repository": "RayleaBot/plugin-echo",
       "license": "MIT",
       "keywords": ["echo", "message"],
-      "recommended": true,
-      "category": "工具"
+      "category": "工具",
+      "recommended": true
     },
     {
       "id": "raylea.fortune",
       "name": "运势",
       "summary": "每日运势抽取、统计与可视化管理。",
-      "publisher": {"id": "rayleabot", "name": "RayleaBot"},
-      "repository_url": "https://github.com/RayleaBot/plugin-fortune",
+      "repository": "RayleaBot/plugin-fortune",
       "license": "MIT",
       "keywords": ["fortune", "render", "vue"],
-      "recommended": true,
-      "category": "娱乐"
+      "category": "娱乐",
+      "recommended": true
     },
     {
       "id": "raylea.game-guide",
       "name": "游戏攻略",
       "summary": "查询《崩坏：星穹铁道》角色攻略图。",
-      "publisher": {"id": "rayleabot", "name": "RayleaBot"},
-      "repository_url": "https://github.com/RayleaBot/plugin-game-guide",
+      "repository": "RayleaBot/plugin-game-guide",
       "license": "MIT",
       "keywords": ["guide", "render", "honkai-star-rail"],
-      "recommended": true,
-      "category": "游戏"
+      "category": "游戏",
+      "recommended": true
     },
     {
       "id": "raylea.subscription-hub",
       "name": "订阅与解析",
       "summary": "订阅平台内容，并解析 B站、微博与抖音链接。",
-      "publisher": {"id": "rayleabot", "name": "RayleaBot"},
-      "repository_url": "https://github.com/RayleaBot/plugin-subscription-hub",
+      "repository": "RayleaBot/plugin-subscription-hub",
       "license": "MIT",
       "keywords": ["subscription", "bilibili", "weibo", "douyin", "resolver"],
-      "recommended": true,
-      "category": "工具"
+      "category": "工具",
+      "recommended": true
     },
     {
       "id": "raylea.delta-force",
       "name": "三角洲助手",
       "summary": "《三角洲行动》摸容器模拟与每日密码查询。",
-      "publisher": {"id": "rayleabot", "name": "RayleaBot"},
-      "repository_url": "https://github.com/RayleaBot/plugin-delta-force",
+      "repository": "RayleaBot/plugin-delta-force",
       "license": "AGPL-3.0-only",
       "keywords": ["delta-force", "loot", "password", "render"],
-      "recommended": true,
-      "category": "游戏"
+      "category": "游戏",
+      "recommended": true
     },
     {
       "id": "raylea.oil-price",
       "name": "油价查询",
       "summary": "查询省市价区油价和附近大型品牌加油站。",
-      "publisher": {"id": "rayleabot", "name": "RayleaBot"},
-      "repository_url": "https://github.com/RayleaBot/plugin-oil-price",
+      "repository": "RayleaBot/plugin-oil-price",
       "license": "MIT",
       "keywords": ["oil-price", "gas-station", "openstreetmap"],
-      "recommended": true,
-      "category": "生活"
+      "category": "生活",
+      "recommended": true
     }
   ]
 }

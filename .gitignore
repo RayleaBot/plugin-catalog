@@ -1,3 +1,2 @@
-catalog.sig.json
 *.log
-
+__pycache__/
