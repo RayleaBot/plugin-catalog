@@ -40,9 +40,11 @@ function readSigningKey(idName, keyName, required) {
 }
 
 function validateCatalog(catalog) {
-  if (catalog?.catalog_version !== '1' || !Array.isArray(catalog.entries)) {
-    throw new Error('catalog.json must satisfy catalog version 1')
+  if (catalog?.catalog_version !== '2' || !Array.isArray(catalog.entries)) {
+    throw new Error('catalog.json must satisfy catalog version 2')
   }
+  const sha256Pattern = /^[a-f0-9]{64}$/
+  const supportedPlatforms = new Set(['windows-x64', 'linux-x64', 'macos-arm64'])
   const pluginIDs = new Set()
   for (const entry of catalog.entries) {
     if (!/^[a-z0-9](?:[a-z0-9._-]{0,62}[a-z0-9])?$/.test(entry?.id ?? '') || pluginIDs.has(entry.id)) {
@@ -56,12 +58,22 @@ function validateCatalog(catalog) {
     for (const release of entry.releases) {
       if (versions.has(release.version)) throw new Error(`plugin ${entry.id} has duplicate release ${release.version}`)
       versions.add(release.version)
+      if (!sha256Pattern.test(release.manifest_sha256 ?? '') || typeof release.yanked !== 'boolean') {
+        throw new Error(`plugin ${entry.id} release ${release.version} has invalid release metadata`)
+      }
       const platforms = new Set()
       for (const asset of release.assets ?? []) {
-        if (platforms.has(asset.platform) || !String(asset.url ?? '').startsWith('https://')) {
+        if (!supportedPlatforms.has(asset.platform) || platforms.has(asset.platform)
+          || !String(asset.url ?? '').startsWith('https://')
+          || !Number.isInteger(asset.archive_size_bytes) || asset.archive_size_bytes <= 0
+          || !sha256Pattern.test(asset.archive_sha256 ?? '')
+          || Object.hasOwn(asset, 'manifest_sha256')) {
           throw new Error(`plugin ${entry.id} release ${release.version} has invalid assets`)
         }
         platforms.add(asset.platform)
+      }
+      if (platforms.size !== supportedPlatforms.size) {
+        throw new Error(`plugin ${entry.id} release ${release.version} must cover all supported platforms`)
       }
     }
   }
@@ -70,4 +82,3 @@ function validateCatalog(catalog) {
 function toPaddedBase64URL(value) {
   return value.toString('base64').replaceAll('+', '-').replaceAll('/', '_')
 }
-

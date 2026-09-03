@@ -1,75 +1,78 @@
 {
-  "catalog_version": "1",
-  "generated_at": "2026-08-29T07:14:15Z",
+  "catalog_version": "2",
+  "generated_at": "2026-09-02T19:50:35Z",
   "entries": [
     {
       "id": "raylea.echo",
       "name": "Echo",
       "summary": "回显收到的聊天消息。",
       "description": "用于验证命令分发、事件处理和消息回复链路的官方插件。",
-      "publisher": { "id": "rayleabot", "name": "RayleaBot", "verified": true },
+      "publisher": {
+        "id": "rayleabot",
+        "name": "RayleaBot",
+        "verified": true
+      },
       "repository_url": "https://github.com/RayleaBot/plugin-echo",
       "license": "MIT",
-      "keywords": ["echo", "message"],
+      "keywords": [
+        "echo",
+        "message"
+      ],
       "recommended": true,
       "releases": [
         {
           "version": "0.2.1",
           "published_at": "2026-08-07T14:49:10Z",
           "min_core_version": "0.3.0",
-          "yanked": false,
+          "yanked": true,
           "assets": [
             {
               "platform": "windows-x64",
               "url": "https://github.com/RayleaBot/plugin-echo/releases/download/v0.2.1/raylea.echo-0.2.1-windows-x64.zip",
               "archive_size_bytes": 1152865,
-              "archive_sha256": "3be8ff5648406b41a85e2b2c9607e2eed471b62af2521b4a6d8f769862af622e",
-              "manifest_sha256": "d9c46d1100941ddc0eefa2cfa84674caa780b6bd187aeabcc37b5d4969ba99d2"
+              "archive_sha256": "3be8ff5648406b41a85e2b2c9607e2eed471b62af2521b4a6d8f769862af622e"
             },
             {
               "platform": "linux-x64",
               "url": "https://github.com/RayleaBot/plugin-echo/releases/download/v0.2.1/raylea.echo-0.2.1-linux-x64.zip",
               "archive_size_bytes": 1111686,
-              "archive_sha256": "9bf37cb0bc4003e7ac35838c97f4afddb0372b92c64a044f00ce3cc50845e595",
-              "manifest_sha256": "d9c46d1100941ddc0eefa2cfa84674caa780b6bd187aeabcc37b5d4969ba99d2"
+              "archive_sha256": "9bf37cb0bc4003e7ac35838c97f4afddb0372b92c64a044f00ce3cc50845e595"
             },
             {
               "platform": "macos-arm64",
               "url": "https://github.com/RayleaBot/plugin-echo/releases/download/v0.2.1/raylea.echo-0.2.1-macos-arm64.zip",
               "archive_size_bytes": 1064190,
-              "archive_sha256": "4094330e199a0d1d082658ca776e20071220d42c5a2f3a34df1c7873a561829d",
-              "manifest_sha256": "d9c46d1100941ddc0eefa2cfa84674caa780b6bd187aeabcc37b5d4969ba99d2"
+              "archive_sha256": "4094330e199a0d1d082658ca776e20071220d42c5a2f3a34df1c7873a561829d"
             }
-          ]
+          ],
+          "manifest_sha256": "d9c46d1100941ddc0eefa2cfa84674caa780b6bd187aeabcc37b5d4969ba99d2"
         },
         {
           "version": "0.2.0",
           "published_at": "2026-08-04T17:22:01Z",
           "min_core_version": "0.3.0",
-          "yanked": false,
+          "yanked": true,
           "assets": [
             {
               "platform": "windows-x64",
               "url": "https://github.com/RayleaBot/plugin-echo/releases/download/v0.2.0/raylea.echo-0.2.0-windows-x64.zip",
               "archive_size_bytes": 1152182,
-              "archive_sha256": "f86e6ab8cbf0cf80ddb336b3824b62c47fa5e9d5d4e6413e0149cbf969184e2a",
-              "manifest_sha256": "3ee4c29b1e9b51d27e2f033a91a865215fcaa01e97786029b0115d4d36ce13ac"
+              "archive_sha256": "f86e6ab8cbf0cf80ddb336b3824b62c47fa5e9d5d4e6413e0149cbf969184e2a"
             },
             {
               "platform": "linux-x64",
               "url": "https://github.com/RayleaBot/plugin-echo/releases/download/v0.2.0/raylea.echo-0.2.0-linux-x64.zip",
               "archive_size_bytes": 1111184,
-              "archive_sha256": "a6b90b5d116a095cb9a11984ce3cae6b5c02a9ea98d36472ae2ad1d8e2436d7a",
-              "manifest_sha256": "3ee4c29b1e9b51d27e2f033a91a865215fcaa01e97786029b0115d4d36ce13ac"
+              "archive_sha256": "a6b90b5d116a095cb9a11984ce3cae6b5c02a9ea98d36472ae2ad1d8e2436d7a"
             },
             {
               "platform": "macos-arm64",
               "url": "https://github.com/RayleaBot/plugin-echo/releases/download/v0.2.0/raylea.echo-0.2.0-macos-arm64.zip",
               "archive_size_bytes": 1063596,
-              "archive_sha256": "92fb606d00667abc7849cc2268d1546109a61649deb2b49f29a23263a947b070",
-              "manifest_sha256": "3ee4c29b1e9b51d27e2f033a91a865215fcaa01e97786029b0115d4d36ce13ac"
+              "archive_sha256": "92fb606d00667abc7849cc2268d1546109a61649deb2b49f29a23263a947b070"
             }
-          ]
+          ],
+          "manifest_sha256": "3ee4c29b1e9b51d27e2f033a91a865215fcaa01e97786029b0115d4d36ce13ac"
         }
       ]
     },
@@ -78,98 +81,99 @@
       "name": "Fortune",
       "summary": "提供每日运势与 Vue 管理页。",
       "description": "生成稳定的每日运势结果，并通过隔离的插件管理页维护展示配置。",
-      "publisher": { "id": "rayleabot", "name": "RayleaBot", "verified": true },
+      "publisher": {
+        "id": "rayleabot",
+        "name": "RayleaBot",
+        "verified": true
+      },
       "repository_url": "https://github.com/RayleaBot/plugin-fortune",
       "license": "MIT",
-      "keywords": ["fortune", "vue"],
+      "keywords": [
+        "fortune",
+        "vue"
+      ],
       "recommended": true,
       "releases": [
         {
           "version": "0.2.5",
           "published_at": "2026-08-29T07:13:13Z",
           "min_core_version": "0.3.0",
-          "yanked": false,
+          "yanked": true,
           "assets": [
             {
               "platform": "windows-x64",
               "url": "https://github.com/RayleaBot/plugin-fortune/releases/download/v0.2.5/raylea.fortune-0.2.5-windows-x64.zip",
               "archive_size_bytes": 31817759,
-              "archive_sha256": "49070d4eea8538155b0790c95ecaeb456c892c3beb176ab31112a2788d5fa286",
-              "manifest_sha256": "aac25fb15509c57395398ed7ac9d8b8be931c68fff087f7e8b4152344037e8d9"
+              "archive_sha256": "49070d4eea8538155b0790c95ecaeb456c892c3beb176ab31112a2788d5fa286"
             },
             {
               "platform": "linux-x64",
               "url": "https://github.com/RayleaBot/plugin-fortune/releases/download/v0.2.5/raylea.fortune-0.2.5-linux-x64.zip",
               "archive_size_bytes": 31767672,
-              "archive_sha256": "f1db881f587a44970d000262af8198650cbaf3a9c5378ca8b0bd8e1d1fab6f76",
-              "manifest_sha256": "aac25fb15509c57395398ed7ac9d8b8be931c68fff087f7e8b4152344037e8d9"
+              "archive_sha256": "f1db881f587a44970d000262af8198650cbaf3a9c5378ca8b0bd8e1d1fab6f76"
             },
             {
               "platform": "macos-arm64",
               "url": "https://github.com/RayleaBot/plugin-fortune/releases/download/v0.2.5/raylea.fortune-0.2.5-macos-arm64.zip",
               "archive_size_bytes": 31712447,
-              "archive_sha256": "24c13ad8cab9cd74c586fc38bc26b7da4838823c7fd15b061a05af6327b0da63",
-              "manifest_sha256": "aac25fb15509c57395398ed7ac9d8b8be931c68fff087f7e8b4152344037e8d9"
+              "archive_sha256": "24c13ad8cab9cd74c586fc38bc26b7da4838823c7fd15b061a05af6327b0da63"
             }
-          ]
+          ],
+          "manifest_sha256": "aac25fb15509c57395398ed7ac9d8b8be931c68fff087f7e8b4152344037e8d9"
         },
         {
           "version": "0.2.3",
           "published_at": "2026-08-07T14:49:38Z",
           "min_core_version": "0.3.0",
-          "yanked": false,
+          "yanked": true,
           "assets": [
             {
               "platform": "windows-x64",
               "url": "https://github.com/RayleaBot/plugin-fortune/releases/download/v0.2.3/raylea.fortune-0.2.3-windows-x64.zip",
               "archive_size_bytes": 1651476,
-              "archive_sha256": "84027bd02a9447db08147331ea7d32a2e6a877e27d316f3bb393f460a2da3b50",
-              "manifest_sha256": "0ea15ca07bd7379b123090fb5088c9b45031bdf7d7d60929dcf8325ce11827d6"
+              "archive_sha256": "84027bd02a9447db08147331ea7d32a2e6a877e27d316f3bb393f460a2da3b50"
             },
             {
               "platform": "linux-x64",
               "url": "https://github.com/RayleaBot/plugin-fortune/releases/download/v0.2.3/raylea.fortune-0.2.3-linux-x64.zip",
               "archive_size_bytes": 1601831,
-              "archive_sha256": "f2f531b85cf4c72131160f582a13fbd6f378de96ff80cff46f604fd6c74c208f",
-              "manifest_sha256": "0ea15ca07bd7379b123090fb5088c9b45031bdf7d7d60929dcf8325ce11827d6"
+              "archive_sha256": "f2f531b85cf4c72131160f582a13fbd6f378de96ff80cff46f604fd6c74c208f"
             },
             {
               "platform": "macos-arm64",
               "url": "https://github.com/RayleaBot/plugin-fortune/releases/download/v0.2.3/raylea.fortune-0.2.3-macos-arm64.zip",
               "archive_size_bytes": 1548772,
-              "archive_sha256": "ff47723ddad70dd701a677bd6988858bf3c8fe7e3e1939d9e6ef86e0f81381c2",
-              "manifest_sha256": "0ea15ca07bd7379b123090fb5088c9b45031bdf7d7d60929dcf8325ce11827d6"
+              "archive_sha256": "ff47723ddad70dd701a677bd6988858bf3c8fe7e3e1939d9e6ef86e0f81381c2"
             }
-          ]
+          ],
+          "manifest_sha256": "0ea15ca07bd7379b123090fb5088c9b45031bdf7d7d60929dcf8325ce11827d6"
         },
         {
           "version": "0.2.0",
           "published_at": "2026-08-04T17:22:37Z",
           "min_core_version": "0.3.0",
-          "yanked": false,
+          "yanked": true,
           "assets": [
             {
               "platform": "windows-x64",
               "url": "https://github.com/RayleaBot/plugin-fortune/releases/download/v0.2.0/raylea.fortune-0.2.0-windows-x64.zip",
               "archive_size_bytes": 1631486,
-              "archive_sha256": "10233a9da0a7d1fa426c185a4cf74e478b35fb0ce4994fcc78f8e084314046b8",
-              "manifest_sha256": "47322bfeb0991f14765c01052916c9eba68796916d1c0552ab77e5f01458e485"
+              "archive_sha256": "10233a9da0a7d1fa426c185a4cf74e478b35fb0ce4994fcc78f8e084314046b8"
             },
             {
               "platform": "linux-x64",
               "url": "https://github.com/RayleaBot/plugin-fortune/releases/download/v0.2.0/raylea.fortune-0.2.0-linux-x64.zip",
               "archive_size_bytes": 1582724,
-              "archive_sha256": "209a6277b07ec90676fcaa0cf036e46773b55c376251bb3838195f918f7f49a2",
-              "manifest_sha256": "47322bfeb0991f14765c01052916c9eba68796916d1c0552ab77e5f01458e485"
+              "archive_sha256": "209a6277b07ec90676fcaa0cf036e46773b55c376251bb3838195f918f7f49a2"
             },
             {
               "platform": "macos-arm64",
               "url": "https://github.com/RayleaBot/plugin-fortune/releases/download/v0.2.0/raylea.fortune-0.2.0-macos-arm64.zip",
               "archive_size_bytes": 1529287,
-              "archive_sha256": "eb651b3fd68160c3b95a3dadaa677369b4fa6cbac91408cc4bdd65f1b3cce4b4",
-              "manifest_sha256": "47322bfeb0991f14765c01052916c9eba68796916d1c0552ab77e5f01458e485"
+              "archive_sha256": "eb651b3fd68160c3b95a3dadaa677369b4fa6cbac91408cc4bdd65f1b3cce4b4"
             }
-          ]
+          ],
+          "manifest_sha256": "47322bfeb0991f14765c01052916c9eba68796916d1c0552ab77e5f01458e485"
         }
       ]
     },
@@ -178,98 +182,99 @@
       "name": "Game Guide",
       "summary": "查询游戏角色攻略并渲染卡片。",
       "description": "通过命令规则检索角色资料，并使用框架托管的渲染模板输出攻略卡片。",
-      "publisher": { "id": "rayleabot", "name": "RayleaBot", "verified": true },
+      "publisher": {
+        "id": "rayleabot",
+        "name": "RayleaBot",
+        "verified": true
+      },
       "repository_url": "https://github.com/RayleaBot/plugin-game-guide",
       "license": "MIT",
-      "keywords": ["guide", "render"],
+      "keywords": [
+        "guide",
+        "render"
+      ],
       "recommended": true,
       "releases": [
         {
           "version": "0.2.3",
           "published_at": "2026-08-29T07:12:32Z",
           "min_core_version": "0.3.0",
-          "yanked": false,
+          "yanked": true,
           "assets": [
             {
               "platform": "windows-x64",
               "url": "https://github.com/RayleaBot/plugin-game-guide/releases/download/v0.2.3/raylea.game-guide-0.2.3-windows-x64.zip",
               "archive_size_bytes": 1337543,
-              "archive_sha256": "90e8dcb7000727211ed622544f8e498d7dc4e13d809105f40de4b7a40893b849",
-              "manifest_sha256": "c00f96e26af7d51165c0bb0f78331109d9acb04803579282f81ebca123d2b000"
+              "archive_sha256": "90e8dcb7000727211ed622544f8e498d7dc4e13d809105f40de4b7a40893b849"
             },
             {
               "platform": "linux-x64",
               "url": "https://github.com/RayleaBot/plugin-game-guide/releases/download/v0.2.3/raylea.game-guide-0.2.3-linux-x64.zip",
               "archive_size_bytes": 1300061,
-              "archive_sha256": "41ed978adb462abdea97d7dba4943d058bbb0b52bd2a8f50758b1cff031f7e9a",
-              "manifest_sha256": "c00f96e26af7d51165c0bb0f78331109d9acb04803579282f81ebca123d2b000"
+              "archive_sha256": "41ed978adb462abdea97d7dba4943d058bbb0b52bd2a8f50758b1cff031f7e9a"
             },
             {
               "platform": "macos-arm64",
               "url": "https://github.com/RayleaBot/plugin-game-guide/releases/download/v0.2.3/raylea.game-guide-0.2.3-macos-arm64.zip",
               "archive_size_bytes": 1235378,
-              "archive_sha256": "fd3e27d2596d6d4fefa981b387e5b4e97ac5b2ed75adfb17e6583d7e5317e93b",
-              "manifest_sha256": "c00f96e26af7d51165c0bb0f78331109d9acb04803579282f81ebca123d2b000"
+              "archive_sha256": "fd3e27d2596d6d4fefa981b387e5b4e97ac5b2ed75adfb17e6583d7e5317e93b"
             }
-          ]
+          ],
+          "manifest_sha256": "c00f96e26af7d51165c0bb0f78331109d9acb04803579282f81ebca123d2b000"
         },
         {
           "version": "0.2.1",
           "published_at": "2026-08-07T14:49:07Z",
           "min_core_version": "0.3.0",
-          "yanked": false,
+          "yanked": true,
           "assets": [
             {
               "platform": "windows-x64",
               "url": "https://github.com/RayleaBot/plugin-game-guide/releases/download/v0.2.1/raylea.game-guide-0.2.1-windows-x64.zip",
               "archive_size_bytes": 1215567,
-              "archive_sha256": "4a3272a80f5b5434fa684648259b5381350484f8754963c7a3b61671860ead64",
-              "manifest_sha256": "31bf9d0c472198c9322fe64e76ef7d073209ab439bedfda1ce0d9d026db8dfa5"
+              "archive_sha256": "4a3272a80f5b5434fa684648259b5381350484f8754963c7a3b61671860ead64"
             },
             {
               "platform": "linux-x64",
               "url": "https://github.com/RayleaBot/plugin-game-guide/releases/download/v0.2.1/raylea.game-guide-0.2.1-linux-x64.zip",
               "archive_size_bytes": 1179196,
-              "archive_sha256": "447543991786c96d96d04b2c8bfb923d69ffc58feb03fdf1385b9990663408ce",
-              "manifest_sha256": "31bf9d0c472198c9322fe64e76ef7d073209ab439bedfda1ce0d9d026db8dfa5"
+              "archive_sha256": "447543991786c96d96d04b2c8bfb923d69ffc58feb03fdf1385b9990663408ce"
             },
             {
               "platform": "macos-arm64",
               "url": "https://github.com/RayleaBot/plugin-game-guide/releases/download/v0.2.1/raylea.game-guide-0.2.1-macos-arm64.zip",
               "archive_size_bytes": 1126587,
-              "archive_sha256": "aaedc285b895e5dccf90f6f8220569e378f5a4a330c326182d382fd354b0e529",
-              "manifest_sha256": "31bf9d0c472198c9322fe64e76ef7d073209ab439bedfda1ce0d9d026db8dfa5"
+              "archive_sha256": "aaedc285b895e5dccf90f6f8220569e378f5a4a330c326182d382fd354b0e529"
             }
-          ]
+          ],
+          "manifest_sha256": "31bf9d0c472198c9322fe64e76ef7d073209ab439bedfda1ce0d9d026db8dfa5"
         },
         {
           "version": "0.2.0",
           "published_at": "2026-08-04T17:22:15Z",
           "min_core_version": "0.3.0",
-          "yanked": false,
+          "yanked": true,
           "assets": [
             {
               "platform": "windows-x64",
               "url": "https://github.com/RayleaBot/plugin-game-guide/releases/download/v0.2.0/raylea.game-guide-0.2.0-windows-x64.zip",
               "archive_size_bytes": 1215246,
-              "archive_sha256": "b95af8cdb020ce705cbe9f98b470799253a69e5f6acd7d262bfc6912fb0fa60b",
-              "manifest_sha256": "9255023d7ab5b0f6806aa790f76ae54a6a11cbe5979b75e8865364d0bd51bf73"
+              "archive_sha256": "b95af8cdb020ce705cbe9f98b470799253a69e5f6acd7d262bfc6912fb0fa60b"
             },
             {
               "platform": "linux-x64",
               "url": "https://github.com/RayleaBot/plugin-game-guide/releases/download/v0.2.0/raylea.game-guide-0.2.0-linux-x64.zip",
               "archive_size_bytes": 1178743,
-              "archive_sha256": "63d7a4f51c01979a4d0b6b6476204baeb4c6089c5f4e1df16a1367d8b411623a",
-              "manifest_sha256": "9255023d7ab5b0f6806aa790f76ae54a6a11cbe5979b75e8865364d0bd51bf73"
+              "archive_sha256": "63d7a4f51c01979a4d0b6b6476204baeb4c6089c5f4e1df16a1367d8b411623a"
             },
             {
               "platform": "macos-arm64",
               "url": "https://github.com/RayleaBot/plugin-game-guide/releases/download/v0.2.0/raylea.game-guide-0.2.0-macos-arm64.zip",
               "archive_size_bytes": 1126070,
-              "archive_sha256": "806e3c6d1020b41fc1226fdea2dd3ffdd5fbdc42a75b5ca23ae8e5c3824bed9c",
-              "manifest_sha256": "9255023d7ab5b0f6806aa790f76ae54a6a11cbe5979b75e8865364d0bd51bf73"
+              "archive_sha256": "806e3c6d1020b41fc1226fdea2dd3ffdd5fbdc42a75b5ca23ae8e5c3824bed9c"
             }
-          ]
+          ],
+          "manifest_sha256": "9255023d7ab5b0f6806aa790f76ae54a6a11cbe5979b75e8865364d0bd51bf73"
         }
       ]
     },
@@ -278,98 +283,100 @@
       "name": "Subscription Hub",
       "summary": "订阅第三方动态并推送更新。",
       "description": "管理第三方账号订阅、定时检查和图文更新渲染，并提供独立 Vue 管理页。",
-      "publisher": { "id": "rayleabot", "name": "RayleaBot", "verified": true },
+      "publisher": {
+        "id": "rayleabot",
+        "name": "RayleaBot",
+        "verified": true
+      },
       "repository_url": "https://github.com/RayleaBot/plugin-subscription-hub",
       "license": "MIT",
-      "keywords": ["subscription", "bilibili", "scheduler"],
+      "keywords": [
+        "subscription",
+        "bilibili",
+        "scheduler"
+      ],
       "recommended": true,
       "releases": [
         {
           "version": "0.2.8",
           "published_at": "2026-08-29T07:13:08Z",
           "min_core_version": "0.3.2",
-          "yanked": false,
+          "yanked": true,
           "assets": [
             {
               "platform": "windows-x64",
               "url": "https://github.com/RayleaBot/plugin-subscription-hub/releases/download/v0.2.8/raylea.subscription-hub-0.2.8-windows-x64.zip",
               "archive_size_bytes": 2547851,
-              "archive_sha256": "ba390dbe6e9114547c92b0187de3598cc9a3746cd0dd88d6ae1e9f9eb70944be",
-              "manifest_sha256": "bf55400d74afced7cc9dbd20d9b11be872caeb583366cc94462b9740f5091bea"
+              "archive_sha256": "ba390dbe6e9114547c92b0187de3598cc9a3746cd0dd88d6ae1e9f9eb70944be"
             },
             {
               "platform": "linux-x64",
               "url": "https://github.com/RayleaBot/plugin-subscription-hub/releases/download/v0.2.8/raylea.subscription-hub-0.2.8-linux-x64.zip",
               "archive_size_bytes": 2478005,
-              "archive_sha256": "733c4775383baf82170dd9c8b37edc736fdd5e867e117303aef952ac4f5e926e",
-              "manifest_sha256": "bf55400d74afced7cc9dbd20d9b11be872caeb583366cc94462b9740f5091bea"
+              "archive_sha256": "733c4775383baf82170dd9c8b37edc736fdd5e867e117303aef952ac4f5e926e"
             },
             {
               "platform": "macos-arm64",
               "url": "https://github.com/RayleaBot/plugin-subscription-hub/releases/download/v0.2.8/raylea.subscription-hub-0.2.8-macos-arm64.zip",
               "archive_size_bytes": 2371606,
-              "archive_sha256": "c96d1751eb734850ba1305de209ff36cebe7b5c7b123782aa85e6eb11765884a",
-              "manifest_sha256": "bf55400d74afced7cc9dbd20d9b11be872caeb583366cc94462b9740f5091bea"
+              "archive_sha256": "c96d1751eb734850ba1305de209ff36cebe7b5c7b123782aa85e6eb11765884a"
             }
-          ]
+          ],
+          "manifest_sha256": "bf55400d74afced7cc9dbd20d9b11be872caeb583366cc94462b9740f5091bea"
         },
         {
           "version": "0.2.2",
           "published_at": "2026-08-07T14:49:45Z",
           "min_core_version": "0.3.0",
-          "yanked": false,
+          "yanked": true,
           "assets": [
             {
               "platform": "windows-x64",
               "url": "https://github.com/RayleaBot/plugin-subscription-hub/releases/download/v0.2.2/raylea.subscription-hub-0.2.2-windows-x64.zip",
               "archive_size_bytes": 1406900,
-              "archive_sha256": "1c83768b42fb96e8ac01f3c493262ac3514bb3c5852390d923603db6041b5df7",
-              "manifest_sha256": "2d65a1a6ec982b2019bec499fa7c5191ad6f21d6eaff1035b5b6875168d923ee"
+              "archive_sha256": "1c83768b42fb96e8ac01f3c493262ac3514bb3c5852390d923603db6041b5df7"
             },
             {
               "platform": "linux-x64",
               "url": "https://github.com/RayleaBot/plugin-subscription-hub/releases/download/v0.2.2/raylea.subscription-hub-0.2.2-linux-x64.zip",
               "archive_size_bytes": 1367892,
-              "archive_sha256": "1b4aa639c09b79e568ae899ae686f2039740f4b79c0ac5f2e692d0455d5fdea8",
-              "manifest_sha256": "2d65a1a6ec982b2019bec499fa7c5191ad6f21d6eaff1035b5b6875168d923ee"
+              "archive_sha256": "1b4aa639c09b79e568ae899ae686f2039740f4b79c0ac5f2e692d0455d5fdea8"
             },
             {
               "platform": "macos-arm64",
               "url": "https://github.com/RayleaBot/plugin-subscription-hub/releases/download/v0.2.2/raylea.subscription-hub-0.2.2-macos-arm64.zip",
               "archive_size_bytes": 1306581,
-              "archive_sha256": "64b07f115053c5542c5b6064bda94d4fc3dbe63583febae0d3354fc8eb14ba62",
-              "manifest_sha256": "2d65a1a6ec982b2019bec499fa7c5191ad6f21d6eaff1035b5b6875168d923ee"
+              "archive_sha256": "64b07f115053c5542c5b6064bda94d4fc3dbe63583febae0d3354fc8eb14ba62"
             }
-          ]
+          ],
+          "manifest_sha256": "2d65a1a6ec982b2019bec499fa7c5191ad6f21d6eaff1035b5b6875168d923ee"
         },
         {
           "version": "0.2.0",
           "published_at": "2026-08-04T17:22:57Z",
           "min_core_version": "0.3.0",
-          "yanked": false,
+          "yanked": true,
           "assets": [
             {
               "platform": "windows-x64",
               "url": "https://github.com/RayleaBot/plugin-subscription-hub/releases/download/v0.2.0/raylea.subscription-hub-0.2.0-windows-x64.zip",
               "archive_size_bytes": 1461520,
-              "archive_sha256": "45ae9272ba83780b28fcc9b6e5cdbe7a669ec9b7c0b4751b1f27c1a97599676d",
-              "manifest_sha256": "3c0c1c3676ff69a6523eb76f506960acf4d4afc864e4ca4d0857a3ea947054e0"
+              "archive_sha256": "45ae9272ba83780b28fcc9b6e5cdbe7a669ec9b7c0b4751b1f27c1a97599676d"
             },
             {
               "platform": "linux-x64",
               "url": "https://github.com/RayleaBot/plugin-subscription-hub/releases/download/v0.2.0/raylea.subscription-hub-0.2.0-linux-x64.zip",
               "archive_size_bytes": 1422758,
-              "archive_sha256": "31f46e0316ab8bd8cde1387e68283c06b8e72d7422c2e10aa8ac9ea8a7d6b995",
-              "manifest_sha256": "3c0c1c3676ff69a6523eb76f506960acf4d4afc864e4ca4d0857a3ea947054e0"
+              "archive_sha256": "31f46e0316ab8bd8cde1387e68283c06b8e72d7422c2e10aa8ac9ea8a7d6b995"
             },
             {
               "platform": "macos-arm64",
               "url": "https://github.com/RayleaBot/plugin-subscription-hub/releases/download/v0.2.0/raylea.subscription-hub-0.2.0-macos-arm64.zip",
               "archive_size_bytes": 1361344,
-              "archive_sha256": "385d5ab673432752dafe150a1bc344f011a67a55c8eb7b3529eb348cb9181b14",
-              "manifest_sha256": "3c0c1c3676ff69a6523eb76f506960acf4d4afc864e4ca4d0857a3ea947054e0"
+              "archive_sha256": "385d5ab673432752dafe150a1bc344f011a67a55c8eb7b3529eb348cb9181b14"
             }
-          ]
+          ],
+          "manifest_sha256": "3c0c1c3676ff69a6523eb76f506960acf4d4afc864e4ca4d0857a3ea947054e0"
         }
       ]
     }

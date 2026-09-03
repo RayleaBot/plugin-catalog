@@ -21,7 +21,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 24.18.0
+          node-version: 26.7.0
 
       - name: Sign exact catalog bytes
         env:
