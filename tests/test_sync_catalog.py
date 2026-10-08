@@ -13,7 +13,7 @@ import sync_catalog
 
 
 class PackageInspectionTests(unittest.TestCase):
-    def write_package(self, artifact: dict, flat: bool = False) -> Path:
+    def write_package(self, artifact: dict, flat: bool = False, **info) -> Path:
         temp_dir = tempfile.TemporaryDirectory()
         self.addCleanup(temp_dir.cleanup)
         path = Path(temp_dir.name) / "plugin.zip"
@@ -22,8 +22,9 @@ class PackageInspectionTests(unittest.TestCase):
             package.writestr(prefix + "info.json", json.dumps({
                 "id": "raylea.echo",
                 "version": "0.4.0",
+                "manifest_version": "4",
                 "min_core_version": "0.4.0",
-            }))
+            } | info))
             package.writestr(prefix + "artifact.json", json.dumps(artifact))
             package.writestr(prefix + "bin/raylea.echo.exe", b"fixture")
         return path
@@ -45,6 +46,17 @@ class PackageInspectionTests(unittest.TestCase):
             "files": [],
         })
         self.assertIsNone(sync_catalog.inspect_package(package, "raylea.echo", "0.4.0", "windows-x64"))
+
+    def test_skips_packages_for_earlier_cores(self):
+        artifact = {
+            "artifact_version": "2",
+            "target_platform": "windows-x64",
+            "entry": "bin/raylea.echo.exe",
+        }
+        for info in ({"manifest_version": "3"}, {"min_core_version": "0.4.0-beta.1"}, {"min_core_version": "0.3.1"}):
+            with self.subTest(info=info):
+                package = self.write_package(artifact, **info)
+                self.assertIsNone(sync_catalog.inspect_package(package, "raylea.echo", "0.4.0", "windows-x64"))
 
     def test_rejects_flat_zip(self):
         package = self.write_package({

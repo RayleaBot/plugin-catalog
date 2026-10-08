@@ -18,6 +18,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SUPPORTED_PLATFORMS = ("windows-x64", "linux-x64", "macos-arm64")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
+SEMVER_RE = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-([0-9A-Za-z.-]+))?(?:\+[0-9A-Za-z.-]+)?$")
+MANIFEST_VERSION = "4"
+MIN_SUPPORTED_CORE = (0, 4, 0)
+
+
+def supports_current_core(version: str) -> bool:
+    """Report whether a min_core_version targets a core with manifest v4 support."""
+    match = SEMVER_RE.fullmatch(version)
+    if not match:
+        return False
+    core = tuple(int(part) for part in match.group(1, 2, 3))
+    # A prerelease of 0.4.0 sorts below 0.4.0 and predates manifest v4.
+    return core > MIN_SUPPORTED_CORE or (core == MIN_SUPPORTED_CORE and match.group(4) is None)
 
 
 def load_json(path: Path) -> dict:
@@ -65,6 +78,8 @@ def inspect_package(path: Path, plugin_id: str, version: str, platform: str) -> 
 
     if info.get("id") != plugin_id or info.get("version") != version:
         raise ValueError(f"{path.name}: info.json identity does not match the release")
+    if info.get("manifest_version") != MANIFEST_VERSION or not supports_current_core(str(info.get("min_core_version", ""))):
+        return None
     if artifact.get("artifact_version") != "2" or set(artifact) != {"artifact_version", "target_platform", "entry"}:
         return None
     if artifact.get("target_platform") != platform:
@@ -175,6 +190,8 @@ def validate_catalog(catalog: dict, sources: dict) -> None:
                 raise ValueError(f"{entry['id']}: asset URL must use GitHub HTTPS")
             if not SHA256_RE.fullmatch(str(asset.get("archive_sha256", ""))):
                 raise ValueError(f"{entry['id']}: invalid archive SHA-256")
+        if not supports_current_core(str(release.get("min_core_version", ""))):
+            raise ValueError(f"{entry['id']}: min_core_version must be at least 0.4.0")
 
 
 def main() -> None:
