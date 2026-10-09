@@ -18,6 +18,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SUPPORTED_PLATFORMS = ("windows-x64", "linux-x64", "macos-arm64")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
+PLUGIN_ID_RE = re.compile(r"^[a-z0-9](?:[a-z0-9._-]{0,62}[a-z0-9])?$")
+DEPENDENCY_REQUIREMENTS = ("required", "recommended")
 SEMVER_RE = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-([0-9A-Za-z.-]+))?(?:\+[0-9A-Za-z.-]+)?$")
 MANIFEST_VERSION = "4"
 MIN_SUPPORTED_CORE = (0, 4, 0)
@@ -120,17 +122,24 @@ def build_release(plugin: dict, release: dict) -> dict | None:
                 package_info = info
             elif info.get("min_core_version") != package_info.get("min_core_version"):
                 raise ValueError(f"{name}: min_core_version differs between platform packages")
+            elif info.get("dependencies") != package_info.get("dependencies"):
+                raise ValueError(f"{name}: dependencies differ between platform packages")
             assets.append({"platform": platform, "url": url, "archive_sha256": archive_sha256})
 
     min_core_version = str((package_info or {}).get("min_core_version", "")).strip()
     if not min_core_version:
         raise ValueError(f"{plugin['id']} {version}: min_core_version is missing")
-    return {
+    current_release = {
         "version": version,
         "published_at": release["published_at"],
         "min_core_version": min_core_version,
         "assets": assets,
     }
+    # The store reads prerequisite plugins from the catalog before it downloads anything.
+    dependencies = (package_info or {}).get("dependencies")
+    if dependencies:
+        current_release["dependencies"] = dependencies
+    return current_release
 
 
 def build_catalog(sources: dict, token: str) -> dict:
@@ -192,6 +201,27 @@ def validate_catalog(catalog: dict, sources: dict) -> None:
                 raise ValueError(f"{entry['id']}: invalid archive SHA-256")
         if not supports_current_core(str(release.get("min_core_version", ""))):
             raise ValueError(f"{entry['id']}: min_core_version must be at least 0.4.0")
+        validate_dependencies(entry["id"], release.get("dependencies", []))
+
+
+def validate_dependencies(plugin_id: str, dependencies: object) -> None:
+    if not isinstance(dependencies, list) or len(dependencies) > 16:
+        raise ValueError(f"{plugin_id}: dependencies must be a list of at most 16 items")
+    seen = set()
+    for dependency in dependencies:
+        if not isinstance(dependency, dict) or not set(dependency) <= {"id", "requirement", "reason"}:
+            raise ValueError(f"{plugin_id}: dependency must only hold id, requirement and reason")
+        dependency_id = dependency.get("id")
+        if not isinstance(dependency_id, str) or not PLUGIN_ID_RE.fullmatch(dependency_id):
+            raise ValueError(f"{plugin_id}: invalid dependency id {dependency_id!r}")
+        if dependency_id == plugin_id or dependency_id in seen:
+            raise ValueError(f"{plugin_id}: dependency {dependency_id} is the plugin itself or repeated")
+        seen.add(dependency_id)
+        if dependency.get("requirement") not in DEPENDENCY_REQUIREMENTS:
+            raise ValueError(f"{plugin_id}: dependency {dependency_id} has an unknown requirement")
+        reason = dependency.get("reason")
+        if reason is not None and (not isinstance(reason, str) or not 1 <= len(reason) <= 120):
+            raise ValueError(f"{plugin_id}: dependency {dependency_id} reason must be 1 to 120 characters")
 
 
 def main() -> None:
